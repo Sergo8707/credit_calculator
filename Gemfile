@@ -1,10 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rack"
-gem "sinatra"
-gem "activesupport"
+gem 'sinatra'
 
-group :test do
-  gem "rspec"
-  gem "rack-test"
+group :test, :development do
+  gem 'rspec'
+  gem 'rack-test'
 end
