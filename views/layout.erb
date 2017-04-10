@@ -15,11 +15,19 @@
 </head>
 <body>
 <div class="container">
-  <div>
-    <% if @error then %>
-        <div class="alert alert-error"><%= @error %></div>
-    <% end %>
-    <%= yield %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <img src="http://www.aval.ua/f/1/logo-error.gif" alt="aval-logo">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   </div>
 </div>
 
