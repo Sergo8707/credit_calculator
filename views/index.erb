@@ -1,0 +1,63 @@
+<h3>Кредитный онлайн-калькулятор</h3>
+<p>Предлагаем вам рассчитать ориентировочную сумму ежемесячных платежей по возврату основной суммы и
+  процентов за пользование кредитом в зависимости от срока кредитования и размера процентной ставки,
+  а также определить наиболее удобную для вас схему кредитования.
+</p>
+<p>
+  Более подробную информацию можно получить при личной встрече с кредитным экспертом.
+</p>
+<div class="caption">
+  <table class="table">
+    <tbody>
+    <form method="post" action="/calculate" class="list-group">
+      <b>Кредитные сведения:</b>
+      <tr>
+        <td>
+          Процентная ставка (%):
+        </td>
+        <td>
+          <input id="percent" type="number" name="percent" value="" min="1"><br>
+          <p class="text-danger">Внимание: Данные вводятся через точку!</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Сумма кредита:
+        </td>
+        <td>
+          <input id="credit" type="number" name="credit" value="" min="1"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Метод погашения кредита:
+        </td>
+        <td>
+          <input type="radio" name="payOff" id="payOffUsual" value="Usual" checked="">
+          Стандартный<br>
+          <input type="radio" name="payOff" id="payOffEqual" value="Equal">
+          Аннуитентный (равными частями)<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Срок кредита (в месяцах):
+        </td>
+        <td>
+          <input id="term" type="number" name="term" value="" min="1"> <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>График платежей:</b>
+        </td>
+        <td>
+          <input type="submit" value="Построить" class="btn btn-default">
+        </td>
+      </tr>
+    </form>
+    </tbody>
+  </table>
+</div>
+
+

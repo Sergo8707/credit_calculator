@@ -1,0 +1,51 @@
+<p>Сумма кредита:  <%=  @result.credit[0].round(2) %></p>
+<div class="panel panel-default">
+  <table class="table table-bordered">
+    <thead class="thead-default">
+    <tr>
+      <th><b>номер месяца</b></th>
+      <th><b>погашение кредита</b></th>
+      <th><b>погашение %</b></th>
+      <th><b>общий взнос</b></th>
+      <th><b>остаток кредита</b></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% @result.month_percent.each_with_index do |name, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td>
+            <% if @result.payment[index].nil? %>
+                <%= @result.payment.first.round(2)%>
+            <% else %>
+                <%= @result.payment[index].round(2) %>
+            <% end %>
+          </td>
+          <td><%= name.round(2) %></td>
+          <td>
+            <% if @result.all_payment[index].nil? %>
+                <%= @result.all_payment.first.round(2) %>
+            <% else %>
+                <%= @result.all_payment[index].round(2) %>
+            <% end %>
+          </td>
+          <td><%= @result.credit[index + 1].round(2) %></td>
+    <% end %>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  1. Стоимость нотариального оформления договора залога может отличаться от приведенной.
+</p>
+<p>
+2. Размер страхового взноса может колебаться в зависимости от комплекса предоставляемых страховой компанией услуг.
+</p>
+<p>
+  3. Стоимость внесения в реестр движимого имущества может отличаться от приведенной.
+</p>
+<p>
+  4. График соответствует случаю погашения кредита день в день. В случае отклонения от графика сумма начисленных
+  процентов будет отличаться от приведенных в графике.
+</p>
