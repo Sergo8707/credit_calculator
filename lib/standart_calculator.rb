@@ -7,7 +7,7 @@ class StandartCalculator < CreditCalculator
     @payment = [@credit.first / @term]
 
     @term.times do
-      @month_percent << @credit.last * 30 * @percent /  36000
+      @month_percent << @credit.last * 30 * @percent / 36_000
       @all_payment << @payment.last + @month_percent.last
       @credit << @credit.last - @payment.last
     end

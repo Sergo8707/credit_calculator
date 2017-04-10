@@ -10,22 +10,21 @@ RSpec.describe 'hello app' do
   end
 
   describe "GET '/'" do
-    it "loads index" do
+    it 'loads index' do
       get '/'
       expect(last_response).to be_ok
     end
 
-    it "hompage content" do
+    it 'hompage content' do
       get '/'
-      expect(last_response.body).to include("Процентная ставка (%):")
+      expect(last_response.body).to include('Процентная ставка (%):')
     end
   end
 
   describe "POST '/calculate'" do
-    it "displays calculate template if params are > 0" do
+    it 'displays calculate template if params are > 0' do
       post '/calculate', percent: '12', credit: '10000', term: '6'
-      expect(last_response.body).to include("номер месяца")
+      expect(last_response.body).to include('номер месяца')
     end
   end
-
 end

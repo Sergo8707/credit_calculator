@@ -9,8 +9,8 @@ get '/' do
 end
 
 post '/calculate' do
-    choise = params[:payOff] == "Usual" ? StandartCalculator : AnnuityCalculator
-    @result = choise.new(params[:percent], params[:credit], params[:term])
-    @result.calculate
-    erb :calculate
+  choise = params[:payOff] == 'Usual' ? StandartCalculator : AnnuityCalculator
+  @result = choise.new(params[:percent], params[:credit], params[:term])
+  @result.calculate
+  erb :calculate
 end
